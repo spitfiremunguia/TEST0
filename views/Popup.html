@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <link rel="stylesheet" type="text/css" href="Popup.css" />
+    <script src="../javascript/Task.js"></script>
+    <script src="../javascript/util.js"></script>
+    <script src="../javascript/Window.js"></script>
+    <script src="../javascript/Reminders.js"></script>
+    <script src="../javascript/MarkCounterBool.js"></script>
+    <script src="../javascript/Popup.js"></script>
+</head>
+<body>
+<form id="form">
+    <!-- Сами вкладки -->
+    <ul id="Tabs">
+        <li id="tab-sign-in" class="Tab"><a href="#page-sign-in" id="href-sign-in">Authorize</a></li>
+        <li id="tab-add-task" class="SelectedTab"><a href="#page-add-task" id="href-add-task">Add task</a></li>
+        <li id="tab-add-event" class="Tab"><a href="#page-add-event" id="href-add-event">Add event</a></li>
+    </ul>
+
+    <div style="text-align:center;vertical-align:middle;display:block;"><label id="label-user-message"></label></div>
+    <div id="div-ask-for-name" style="display: none"><br><br><table id="buttons-ask-for-mark" cellpadding=1 width=97%></table></div>
+
+    <!-- Содержимое вкладок -->
+    
+    <div id="Content">
+        <!-- Первая -->
+        <div id="page-add-task">
+                    <label id="label-task-name" style="display:none;"></label>
+                    <input  type="text" id="input-task-name" name="input-task-name" required />
+                    <label id="label-task-list"></label>
+                    <div class="new-select-style-wpandyou">
+                        <select name="combo-task-list" id="combo-task-list" required />
+                        </select>
+                    </div>
+
+            <table cellpadding=1 width=97%>
+                <tr>
+                    <td style="width: 7%; text-align:left; vertical-align:middle;">
+                        <div class="check-box-style">
+                            <input type="checkbox" id="checkbox-with-date" name="checkbox-with-date" checked="true" title="">
+                        </div>
+                    </td>
+                    <td style="width: 93%; text-align:left; vertical-align:middle;">
+                        <label id="label-task-date"></label>
+                    </td>
+                </tr>
+            </table>
+                    <input type="date" id="input-task-date" name="input-task-date" required>
+                    <label id="label-task-comment" style="display:none;"></label>
+                    <div class="new-select-style-wpandyou">
+                        <textarea name="input-task-comment" id="input-task-comment"  rows="2"></textarea>
+                     </div>
+                    <input type="button" id="button-add-task" name="button-add-task"/>
+                    <input type="button" id="button-clear-task" name="button-clear-task">
+        </div>
+
+        <!-- Вторая -->
+        <div class="dropdown">
+                <select onclick="testfunction()" id="dropbtn"class="dropbtn">Disposition
+                
+                        <option value="" selected disabled hidden>Choose here</option>
+                        <option id="lunch_area">Lunch</option>
+                        <option id="break_area">Break</option>
+                        <option id="out_of_seat_area ">Out of seat</option>
+                        <option id="down_area">Down</option>
+                        <option id="update_area">Update</option>
+                    </select>
+                
+        </div>
+        
+        <div id="page-add-event">
+                
+                    <label id="label-event-name" style="display:none;"></label>
+                    <div class="new-select-style-wpandyou">
+                        <input type="text" id="input-event-name" name="input-event-name" required>
+                    </div>
+                    
+                        <label id="label-event-from" ></label>
+                        <table cellpadding=1 width=100%>
+                        <tr>
+                            <td style="width: 49%; vertical-align:middle;" align="left">
+                                <input type="date" id="input-event-from" name="input-event-from" required>
+                            </td>
+                            <td style="width:2%"></td>
+                            <td style="vertical-align:middle;" align="right">
+                                <input type="time" id="input-event-from-time" name="input-event-from-time" required>
+                            </td>
+                         </tr>
+                         </table>
+                         <label id="label-event-to" ></label>
+                        <table cellpadding=1 width=100%>
+                        <tr>
+                             <td style="width:49%;vertical-align:middle;" align="left">
+                            <input type="date" id="input-event-to" name="input-event-to" required>
+                             </td>
+                            <td style="width:2%"></td>
+                             <td style="vertical-align:middle;" align="right">
+                                 <input type="time" id="input-event-to-time" name="input-event-to-time" required>
+                             </td>
+                        </tr>
+                        </table>
+                        <table cellpadding=1 width=97%>
+                        <tr>
+                            <td style="width: 7%; text-align:center; vertical-align:middle;">
+                                <div class="check-box-style">
+                                    <input type="checkbox" id="checkbox-all-day" name="checkbox-all-day" title="">
+                                </div>
+                            </td>
+                            <td style="width: 43%; text-align:left; vertical-align:middle;">
+                                <label id="label-all-day"></label>
+                            </td>
+                            <td style="width: 7%; text-align:center; vertical-align:middle;">
+                                <div class="check-box-style">
+                                  <input type="checkbox" id="checkbox-repetition" name="checkbox-repetition" title="">
+                                </div>
+                            </td>
+                            <td style="width: 43%; text-align:left; vertical-align:middle;">
+                                <label id="label-repetition"></label>
+                            </td>
+                        </tr>
+                    </table>
+                    <label id="label-repetition-interval" style="display:none;"></label>
+                    <div class="new-select-style-wpandyou">
+                         <select name="combo-repetition-interval" id="combo-repetition-interval">
+                         </select>
+                    </div>
+                    <label id="label-event-comment" style="display:none;"></label>
+                    <div class="new-select-style-wpandyou">
+                        <textarea name="input-event-comment" id="input-event-comment"  rows="2"></textarea>
+                    </div>
+                    <label id="label-event-place" style="display:none;"></label>
+                    <div class="new-select-style-wpandyou">
+                        <input type="text" id="input-event-place" name="input-event-place">
+                    </div>
+                    <label id="label-event-calendar" style="display:none;"></label>
+
+                    <table width="100%" border="0" cellspacing="0" cellpadding="0" style="margin-bottom: 15px">
+                        <tr>
+                            <td style="width: 5%;" id="td-color-calendar"></td>
+                            <td style="width: 2%;"></td>
+                            <td style="width: 93%; text-align:center; vertical-align: text-bottom"><div class="calendar-select-style"><select  name="combo-event-calendar" id="combo-event-calendar" required></select></div></td>
+                        </tr>
+                     </table>
+                    <div id="div-remind">
+                    <label id="label-event-remind" style="display:none;"></label>
+                    <div id="div-event-remind-1" style="display:none">
+                        <table cellpadding=0 width=100%>
+                            <tr>
+                                <td style="width: 40%;">
+                                    <div class="new-select-style-reminder">
+                                        <select name="combo-event-remind-method-1" id="combo-event-remind-method-1">
+                                        </select>
+                                    </div>
+                                </td>
+                                <td style="width: 5%">
+                                </td>
+                                <td style="width: 15%;text-align: center">
+                                    <div class="new-select-style-reminder">
+                                        <input type="number" min="1" max="500" id="input-quantity-remind-1" value="10">
+                                    </div>
+                                </td>
+                                <td style="width: 5%">
+                                </td>
+                                <td style="width: 30%;">
+                                    <div class="new-select-style-reminder">
+                                        <select name="combo-event-remind-1" id="combo-event-remind-1">
+                                        </select>
+                                    </div>
+                                </td>
+                                <td style="text-align:center;font-size : large">
+                                   <a href = "#" id="div-event-remind-1-close">
+                                        &times;
+                                    </a>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div id="div-event-remind-2" style="display:none">
+                        <table cellpadding=0 width=100%>
+                            <tr>
+                                <td style="width: 40%;">
+                                    <div class="new-select-style-reminder">
+                                        <select name="combo-event-remind-method-2" id="combo-event-remind-method-2">
+                                        </select>
+                                    </div>
+                                </td>
+                                <td style="width: 5%">
+                                </td>
+                                <td style="width: 15%;text-align: center">
+                                    <div class="new-select-style-reminder">
+                                        <input type="number" min="1" max="500" id="input-quantity-remind-2" value="10">
+                                    </div>
+                                </td>
+                                <td style="width: 5%">
+                                </td>
+                                <td style="width: 30%;">
+                                    <div class="new-select-style-reminder">
+                                        <select name="combo-event-remind-2" id="combo-event-remind-2">
+                                        </select>
+                                    </div>
+                                </td>
+                                <td style="text-align:center;font-size : large">
+                                    <a href = "#" id="div-event-remind-2-close">
+                                        &times;
+                                    </a>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div id="div-event-remind-3" style="display:none">
+                        <table cellpadding=0 width=100%>
+                            <tr>
+                                <td style="width: 40%;">
+                                    <div class="new-select-style-reminder">
+                                        <select name="combo-event-remind-method-3" id="combo-event-remind-method-3">
+                                        </select>
+                                    </div>
+                                </td>
+                                <td style="width: 5%">
+                                </td>
+                                <td style="width: 15%;text-align: center">
+                                    <div class="new-select-style-reminder">
+                                        <input type="number" min="1" max="500" id="input-quantity-remind-3" value="10">
+                                    </div>
+                                </td>
+                                <td style="width: 5%">
+                                </td>
+                                <td style="width: 30%;">
+                                    <div class="new-select-style-reminder">
+                                        <select name="combo-event-remind-3" id="combo-event-remind-3">
+                                        </select>
+                                    </div>
+                                </td>
+                                <td style="text-align:center;font-size : large">
+                                    <a href = "#" id="div-event-remind-3-close">
+                                        &times;
+                                    </a>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div id="div-event-remind-4" style="display:none">
+                        <table cellpadding=0 width=100%>
+                            <tr>
+                                <td style="width: 40%;">
+                                    <div class="new-select-style-reminder">
+                                        <select name="combo-event-remind-method-4" id="combo-event-remind-method-4">
+                                        </select>
+                                    </div>
+                                </td>
+                                <td style="width: 5%">
+                                </td>
+                                <td style="width: 15%;text-align: center">
+                                    <div class="new-select-style-reminder">
+                                        <input type="number" min="1" max="500" id="input-quantity-remind-4" value="10">
+                                    </div>
+                                </td>
+                                <td style="width: 5%">
+                                </td>
+                                <td style="width: 30%;">
+                                    <div class="new-select-style-reminder">
+                                        <select name="combo-event-remind-4" id="combo-event-remind-4">
+                                        </select>
+                                    </div>
+                                </td>
+                                <td style="text-align:center;font-size : large">
+                                    <a href = "#" id="div-event-remind-4-close">
+                                        &times;
+                                    </a>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div id="div-event-remind-5" style="display:none">
+                        <table cellpadding=0 width=100%>
+                            <tr>
+                                <td style="width: 40%;">
+                                    <div class="new-select-style-reminder">
+                                        <select name="combo-event-remind-method-5" id="combo-event-remind-method-5">
+                                        </select>
+                                    </div>
+                                </td>
+                                <td style="width: 5%">
+                                </td>
+                                <td style="width: 15%;text-align: center">
+                                    <div class="new-select-style-reminder">
+                                        <input type="number" min="1" max="500" id="input-quantity-remind-5" value="10">
+                                    </div>
+                                </td>
+                                <td style="width: 5%">
+                                </td>
+                                <td style="width: 30%;">
+                                    <div class="new-select-style-reminder">
+                                        <select name="combo-event-remind-5" id="combo-event-remind-5">
+                                        </select>
+                                    </div>
+                                </td>
+                                <td style="text-align:center;font-size : large">
+                                    <a href = "#" id="div-event-remind-5-close">
+                                        &times;
+                                    </a>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                    </div>
+                    <a href = "#" id="href-add-remind">
+                     </a>
+
+                    <input type="button" id="button-add-event" name="button-add-event"/>
+                    <input type="button" id="button-clear-event" name="button-clear-event">
+        </div>
+
+        <div id="page-sign-in">
+            <br><br>
+            <div style="text-align:right"><label id="label-account-name">???</label><br><br>
+            <input type="button"  id="button-sign-in" name="button-sign-in"/>
+
+        </div>
+    </div>
+
+
+        <table cellpadding=1 width=100% style="vertical-align: bottom">
+            <tr>
+                <td style="width: 50%; text-align:left;">
+                    <a href = "#" id="href-google-cal">Google Calendar</a>
+                </td>
+                <td style="width: 50%; text-align:right">
+                    <a href="#" id="href-day-by-day">
+                        <div id="href-day-by-day-big">Day by Day</div><div style="font-size: xx-small" id="href-day-by-day-small">Android app</div>
+                    </a>
+                </td>
+
+            </tr>
+        </table>
+</form>
+</body>
+</html>
+

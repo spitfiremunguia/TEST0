@@ -1,0 +1,32 @@
+
+{
+    "manifest_version": 2,
+    "name": "Orwell",
+    "description": "Verifica el estado de tus inditos",
+    "version": "1.1",
+    "background": {
+        "page": "views/background.html"
+    },
+    "minimum_chrome_version": "29",
+    "oauth2": {
+        "client_id": "995615477879-uidterp0cqgq1o7h6mrlcqeg968htkvu.apps.googleusercontent.com",
+        "scopes": [
+            "https://www.googleapis.com/auth/calendar",
+            "https://www.googleapis.com/auth/tasks",
+            "https://www.googleapis.com/auth/userinfo.profile"
+        ]
+    },
+    "default_locale":"en",
+    "options_page": "views/options.html",
+    "icons": {
+        "48": "images/daybyday48.png",
+        "128": "images/daybyday128.png"
+    },
+   
+    
+    
+    "permissions": [
+    "unlimitedStorage",
+    "notifications", "cookies", "identity", "storage"
+    ]
+    }

@@ -1,0 +1,280 @@
+/*
+#00CDCD
+#0099CC
+*/
+
+/* Общие элементы, обычное состояние */
+input:invalid {
+    border: 1px solid #FF4444;
+}
+
+
+body, html {
+    width:100%;
+    min-height: 90%;
+    overflow-y:hidden;
+}
+
+form {
+    width:320px;
+    /*min-height:400px;*/
+    font-family: Arial;
+    font-weight:normal;
+    font-style:normal;
+    font-size: 14px;
+}
+
+
+ul#Tabs {
+    font-size: 12px;
+    font-weight: bold;
+    list-style-type: none;
+    padding-bottom: 28px;
+    border-bottom: 1px solid #0099CC;
+    margin-bottom: 12px;
+    text-align: center;
+}
+
+/* описывает названия вкладок*/
+#Tabs li.Tab {
+    float: right;
+    height: 25px;
+    width: 40%;
+    background-color: #fafafa;
+    margin: 2px 0px 0px 5px;
+    border: 1px solid #0099CC;
+
+}
+
+#Tabs li.Tab a {
+    /*float: left;*/
+    display: block;
+    color: #666666;
+    text-decoration: none;
+    padding: 5px;
+    text-align: center;
+}
+
+#Tabs li.Tab a:hover {
+    background-color: #33B5E5;
+    border-bottom: 1px solid #33B5E5;
+}
+
+/* Состояние: активная */
+#Tabs li.SelectedTab {
+    float: right;
+    height: 25px;
+    width: 40%;
+    background-color: #fafafa;
+    margin: 2px 0px 0px 5px;
+    border-top: 1px solid  #0099CC;
+    border-right: 1px solid  #0099CC;
+    border-bottom: 1px solid #fafafa;
+    border-left: 1px solid  #0099CC;
+}
+
+#Tabs li.SelectedTab A {
+    /*float: left;*/
+    display: block;
+    color: #666666;
+    text-decoration: none;
+    padding: 5px;
+    cursor: default;
+    text-align: center;
+}
+
+#div-remind a {
+    display: block;
+    color: #666666;
+    text-decoration: none;
+}
+
+#div-remind a:hover {
+    color:  #33B5E5;/*#468ccf;*/
+}
+
+#page-add-event a {
+    display: block;
+    color: #666666;
+    text-decoration: none;
+}
+
+#page-add-event a:hover {
+    color:  #33B5E5;/*#468ccf;*/
+    text-decoration: underline;
+}
+
+input {
+    width:97%;
+    /*min-height:30px;*/
+    padding-left:5px;
+    display:block;
+    margin-bottom:15px;
+    margin-top:5px;
+    outline: none;
+    box-sizing:content-box;
+}
+
+input[type=number] {
+    width: 97%;
+    min-height:15px;
+    display:block;
+    margin-bottom:1px;
+    margin-top:1px;
+    outline: none;
+    box-sizing:content-box;
+}
+
+input[type=button] {
+    background-color: #DFEEFF;
+    text-indent:0px;
+    border:1px solid #0099CC;
+    display:inline-block;
+    color:#14396a;
+    font-weight:normal;
+    font-style:normal;
+    height:25px;
+    line-height:25px;
+    width:95%;
+    text-decoration:none;
+    text-align:center;
+    margin-bottom:5px;
+    margin-top:5px;
+}
+
+input[type=button]:hover {
+    background-color:#33B5E5;
+}
+input[type=button]:active {
+    position:relative;
+    top:1px;
+}
+
+input[type=button]:disabled {
+    background-color: #dcdcdc;
+    border:1px solid #dcdcdc;
+    display:inline-block;
+    color:#777777;
+    font-weight:normal;
+    font-style:normal;
+    height:25px;
+    line-height:25px;
+    width:95%;
+    text-decoration:none;
+    text-align:center;
+    /*text-shadow:1px 1px 0px #ffffff;*/
+    margin-bottom:5px;
+    margin-top:5px;
+}
+
+.button-style {
+    background-color: #DFEEFF;
+    text-indent:0px;
+    border:1px solid #0099CC;
+    display:inline-block;
+    color:#14396a;
+    font-weight:normal;
+    font-style:normal;
+    height:25px;
+    line-height:25px;
+    width:95%;
+    text-decoration:none;
+    text-align:center;
+    margin-bottom:5px;
+    margin-top:5px;
+}
+
+.button-style:hover {
+    background-color:#33B5E5;
+}
+
+.new-select-style-wpandyou select, textarea, input {
+     font-family: Arial;
+     width:97%;
+     min-height:20px;
+     display:block;
+     margin-bottom:15px;
+     margin-top:5px;
+     padding-left:5px;
+     outline: none;
+     box-sizing:content-box;
+ }
+
+textarea {
+    resize: vertical;
+}
+
+.calendar-select-style select{
+    font-family: Arial;
+    width:97%;
+    min-height:20px;
+    display: block;
+    padding-left:5px;
+    outline: none;
+    box-sizing:content-box;
+}
+
+.new-select-style-reminder {
+    width:97%;
+    min-height:15px;
+    display:block;
+    margin-bottom:1px;
+    margin-top:1px;
+    outline: none;
+    box-sizing:content-box;
+}
+
+.check-box-style input {
+    min-height:10px;
+    display:inline;
+    horizontal-align:right;
+    vertical-align:middle;
+    margin:0px;
+    margin-bottom:5px;
+    margin-top:5px;
+    outline: none;
+    initial:content-box;
+}
+
+/* Dropdown Button */
+.dropbtn {
+    background-color: #4CAF50;
+    color: white;
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+}
+
+/* The container <div> - needed to position the dropdown content */
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+/* Dropdown Content (Hidden by Default) */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f1f1f1;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+/* Links inside the dropdown */
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+/* Change color of dropdown links on hover */
+.dropdown-content a:hover {background-color: #ddd;}
+
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {display: block;}
+
+/* Change the background color of the dropdown button when the dropdown content is shown */
+.dropdown:hover .dropbtn {background-color: #3e8e41;}
+s
